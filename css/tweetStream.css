@@ -1,0 +1,15 @@
+/* CSS Document */
+.tweetStream-wrapper .tweetItemWrapper {
+	margin:0 5px 10px 5px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #AAA;
+	padding:10px;
+	min-height:48px;
+}
+.tweetStream-wrapper img.userPic {
+	float:left;
+	margin-right:5px;
+	cursor:pointer;
+}

@@ -1,0 +1,1567 @@
+(lp0
+(dp1
+Vtext
+p2
+VPlayers only love you when they're playing!!!
+p3
+sVused
+p4
+Vtrue
+p5
+sa(dp6
+Vtext
+p7
+VWhy does it always rain on me!?
+p8
+sVused
+p9
+Vtrue
+p10
+sa(dp11
+Vtext
+p12
+VLet's begin at the beginning, we're lovers and we're losers; we're heroes and we're pioneers, we're beggars and we're choosers.
+p13
+sVused
+p14
+Vfalse
+p15
+sVartist
+p16
+VFrank Turner
+p17
+sa(dp18
+Vtext
+p19
+VI am heaven sent, don't you dare forget.  I am all you've ever wanted, what all the other boys all promised.
+p20
+sVused
+p21
+Vtrue
+p22
+sVartist
+p23
+VBrand New
+p24
+sa(dp25
+Vtext
+p26
+VShot through the heart, and you're too blame!  Darling, you give love a bad name!
+p27
+sVused
+p28
+Vfalse
+p29
+sa(dp30
+Vtext
+p31
+VI feel pretty, oh so pretty, I feel pretty and witty and bright!
+p32
+sVused
+p33
+Vfalse
+p34
+sa(dp35
+Vtext
+p36
+VAnd I was like baby, baby, baby, oh! Baby, baby, baby, no!
+p37
+sVused
+p38
+Vfalse
+p39
+sa(dp40
+Vtext
+p41
+VAnd I can't fight this feeling anymore; I've forgotten what I started fighting for!
+p42
+sVused
+p43
+Vfalse
+p44
+sa(dp45
+Vtext
+p46
+VCan I play with madness!?
+p47
+sVused
+p48
+Vfalse
+p49
+sa(dp50
+Vtext
+p51
+VAre you gonna be my girl?
+p52
+sVused
+p53
+Vfalse
+p54
+sa(dp55
+Vtext
+p56
+VWhen I was a young boy, my father took me into the city, to see a marching band.
+p57
+sVused
+p58
+Vfalse
+p59
+sa(dp60
+Vtext
+p61
+VIt may not feel too classy begging just to eat. But you know who does that? Lassie. And she always gets a treat.
+p62
+sVused
+p63
+Vfalse
+p64
+sa(dp65
+Vtext
+p66
+VSince you've been gone, since you've been gone, I'm out of my head, can't take it!!
+p67
+sVused
+p68
+Vfalse
+p69
+sa(dp70
+Vtext
+p71
+VComing out of my cage, and I've been doing just fine; gotta gotta be down, because I want it all!!
+p72
+sVused
+p73
+Vfalse
+p74
+sa(dp75
+Vtext
+p76
+VYour hand's upon a loaded gun and you're looking down the sight.
+p77
+sVused
+p78
+Vfalse
+p79
+sa(dp80
+Vtext
+p81
+VOne night to be confused, one night to speed up truth; we had a promise made, four hands and then away.
+p82
+sVused
+p83
+Vfalse
+p84
+sa(dp85
+Vtext
+p86
+VStandin' on the rooftops, everybody scream your heart out!
+p87
+sVused
+p88
+Vfalse
+p89
+sa(dp90
+Vtext
+p91
+VI told the witch doctor I was in love with you!!
+p92
+sVused
+p93
+Vfalse
+p94
+sa(dp95
+Vtext
+p96
+VI'm a Barbie girl, in my Barbie world!! Life in plastic, it's fantastic!!
+p97
+sVused
+p98
+Vfalse
+p99
+sa(dp100
+Vtext
+p101
+VSkyrockets in flight, afternoon delight!!
+p102
+sVused
+p103
+Vfalse
+p104
+sa(dp105
+Vtext
+p106
+VAnd I need you now tonight, and I need you more than ever!  And if you'd only hold me tight, we'd be holding on forever!!
+p107
+sVused
+p108
+Vfalse
+p109
+sa(dp110
+Vtext
+p111
+VWe built this city on rock and roll!!
+p112
+sVused
+p113
+Vfalse
+p114
+sa(dp115
+Vtext
+p116
+VAnd I've no more blood to bleed, 'cos my heart has been draining into the sea!
+p117
+sVused
+p118
+Vfalse
+p119
+sa(dp120
+Vtext
+p121
+VThe answer, my friend, is blowing in the wind; the answer is blowing in the wind.
+p122
+sVused
+p123
+Vfalse
+p124
+sa(dp125
+Vtext
+p126
+VAll the lonely people, where do they all come from!? All the lonely people, where do they all belong!?
+p127
+sVused
+p128
+Vfalse
+p129
+sa(dp130
+Vtext
+p131
+VSweet home Alabama, where the skies are so blue! Sweet home Alabama, Lord I'm coming home to you!!
+p132
+sVused
+p133
+Vfalse
+p134
+sa(dp135
+Vtext
+p136
+VI want to get away, I want to fly away!!
+p137
+sVused
+p138
+Vfalse
+p139
+sa(dp140
+Vtext
+p141
+VDon't you forget about me!!
+p142
+sVused
+p143
+Vfalse
+p144
+sa(dp145
+Vtext
+p146
+VI'm doing science and I'm still alive!
+p147
+sVused
+p148
+Vfalse
+p149
+sa(dp150
+Vtext
+p151
+V(doo doo doo doo, doo doo doo, doo doo doo, doo doo) Barbara Streisland!!
+p152
+sVused
+p153
+Vfalse
+p154
+sa(dp155
+Vtext
+p156
+VWishing well, will you marry me? And are you wearing the suffering?
+p157
+sVused
+p158
+Vfalse
+p159
+sa(dp160
+Vtext
+p161
+VNinety-nine bottles of beer on the wall, ninety-nine bottles of beer...
+p162
+sVused
+p163
+Vfalse
+p164
+sa(dp165
+Vtext
+p166
+VHotel, motel, holiday Inn!
+p167
+sVused
+p168
+Vfalse
+p169
+sa(dp170
+Vtext
+p171
+VI don't care if Monday's blue, Tuesday's gray and Wednesday too!
+p172
+sVused
+p173
+Vfalse
+p174
+sa(dp175
+Vtext
+p176
+VCos you got my heart in a headlock, you stopped the blood and made my head soft, and god knows, you got me sewn.
+p177
+sVused
+p178
+Vfalse
+p179
+sa(dp180
+Vtext
+p181
+VGirl, I want to be with you, all day and all of the night!
+p182
+sVused
+p183
+Vfalse
+p184
+sa(dp185
+Vtext
+p186
+VI'll be your number one with a bullet; a loaded God complex, cock it and pull it!
+p187
+sVused
+p188
+Vfalse
+p189
+sa(dp190
+Vtext
+p191
+VEl perro, el perro, es mi corazon! El gato, el gato, el gato no es bueno!
+p192
+sVused
+p193
+Vfalse
+p194
+sa(dp195
+Vtext
+p196
+VI'll be your long-haired lover from Liverpool, and I'll do anything you ask!
+p197
+sVused
+p198
+Vfalse
+p199
+sa(dp200
+Vtext
+p201
+VLayla, you've got me on my knees! Layla, I'm begging, darling, please!
+p202
+sVused
+p203
+Vfalse
+p204
+sa(dp205
+Vtext
+p206
+VI'm just a teenage dirtbag, baby!
+p207
+sVused
+p208
+Vfalse
+p209
+sa(dp210
+Vtext
+p211
+VI can't get no satisfaction!!
+p212
+sVused
+p213
+Vfalse
+p214
+sa(dp215
+Vtext
+p216
+VYou can't always get what you want; but if you try, sometimes, you'll find, you get what you need!
+p217
+sVused
+p218
+Vfalse
+p219
+sa(dp220
+Vtext
+p221
+VWhen I get lonely, and the longing gets too much; she sends acomfort coming in from above!
+p222
+sVused
+p223
+Vfalse
+p224
+sa(dp225
+Vtext
+p226
+VThere's a lady who's sure, all that glitters is gold, and she's buying a stairway to heaven...
+p227
+sVused
+p228
+Vfalse
+p229
+sa(dp230
+Vtext
+p231
+VIt's just your nineteenth nervous breakdown!
+p232
+sVused
+p233
+Vfalse
+p234
+sa(dp235
+Vtext
+p236
+VLipgloss lies, doing the time, never gonna miss what I left behind!
+p237
+sVused
+p238
+Vfalse
+p239
+sa(dp240
+Vtext
+p241
+VWe don't need no education!
+p242
+sVused
+p243
+Vfalse
+p244
+sa(dp245
+Vtext
+p246
+VTake me out, into the black; tell the word I ain't coming back! Burn the land and boil the sea, you can't take the sky from me!
+p247
+sVused
+p248
+Vfalse
+p249
+sa(dp250
+Vtext
+p251
+VTake me out, into the black; tell the word I ain't coming back! Burn the land and boil the sea, you can't take the sky from me!
+p252
+sVused
+p253
+Vfalse
+p254
+sa(dp255
+Vtext
+p256
+VWhy did you do it? Why did you do that thing to me?
+p257
+sVused
+p258
+Vfalse
+p259
+sa(dp260
+Vtext
+p261
+VHello, is it me you're looking for?
+p262
+sVused
+p263
+Vfalse
+p264
+sa(dp265
+Vtext
+p266
+VYou can check out any time you like, but you can never leave!
+p267
+sVused
+p268
+Vfalse
+p269
+sa(dp270
+Vtext
+p271
+VAnyway the wind blows, doesn't really matter, to me!
+p272
+sVused
+p273
+Vfalse
+p274
+sa(dp275
+Vtext
+p276
+VI wanna live like common people!
+p277
+sVused
+p278
+Vfalse
+p279
+sa(dp280
+Vtext
+p281
+VPlease, please, please; let me, let me, let me, get what I want!
+p282
+sVused
+p283
+Vfalse
+p284
+sa(dp285
+Vtext
+p286
+VDon't stop me now, I'm having such a good time, I'm having a ball!
+p287
+sVused
+p288
+Vfalse
+p289
+sa(dp290
+Vtext
+p291
+VSoy un perdedor; I'm a loser, baby, so why don't you kill me?
+p292
+sVused
+p293
+Vfalse
+p294
+sa(dp295
+Vtext
+p296
+VLike the angel you are, you laugh creating a lightness in my chest!
+p297
+sVused
+p298
+Vfalse
+p299
+sa(dp300
+Vtext
+p301
+VAll this feels strange and untrue, and I won't waste a minute without you.
+p302
+sVused
+p303
+Vfalse
+p304
+sa(dp305
+Vtext
+p306
+VThere must be some kind of way out of here, said the Joker to the Thief!
+p307
+sVused
+p308
+Vfalse
+p309
+sa(dp310
+Vtext
+p311
+VMy mind is tellin' me no, but my body, my body's tellin' me yes!
+p312
+sVused
+p313
+Vfalse
+p314
+sa(dp315
+Vtext
+p316
+VThey're gonna clean up your looks, with all the lies in their books, to make a citizen out of you!
+p317
+sVused
+p318
+Vfalse
+p319
+sa(dp320
+Vtext
+p321
+VI am not your rolling wheels, I am the highway!
+p322
+sVused
+p323
+Vfalse
+p324
+sa(dp325
+Vtext
+p326
+VThere is love burning to find you, will you wait for me? Will you  be here?
+p327
+sVused
+p328
+Vfalse
+p329
+sa(dp330
+Vtext
+p331
+VTake this life, I'm right here, stay a while and breathe me in!
+p332
+sVused
+p333
+Vfalse
+p334
+sa(dp335
+Vtext
+p336
+VIf you leave me now, you'd take away the biggest part of me!
+p337
+sVused
+p338
+Vfalse
+p339
+sa(dp340
+Vtext
+p341
+VBut I will hold on hope, and I won't let you choke, on the noose around your neck!
+p342
+sVused
+p343
+Vfalse
+p344
+sa(dp345
+Vtext
+p346
+VForever's gonna start tonight!
+p347
+sVused
+p348
+Vfalse
+p349
+sa(dp350
+Vtext
+p351
+VHe doesn't look a thing like Jesus!
+p352
+sVused
+p353
+Vfalse
+p354
+sa(dp355
+Vtext
+p356
+VI want to break free, I want to break free!
+p357
+sVused
+p358
+Vfalse
+p359
+sa(dp360
+Vtext
+p361
+VYou took the words right out of my mouth; it must have been while you were kissing me!
+p362
+sVused
+p363
+Vfalse
+p364
+sa(dp365
+Vtext
+p366
+VMiss black eyeliner, you'd look finer, with each day in hiding...
+p367
+sVused
+p368
+Vfalse
+p369
+sa(dp370
+Vtext
+p371
+VZadok the priest, and Nathan the prophet, anointed Solomon king!
+p372
+sVused
+p373
+Vfalse
+p374
+sa(dp375
+Vtext
+p376
+VThere she stood, in the street, smiling from her head to her feet!
+p377
+sVused
+p378
+Vfalse
+p379
+sa(dp380
+Vtext
+p381
+VFind me and follow me, through corridors, refectories and files!
+p382
+sVused
+p383
+Vfalse
+p384
+sa(dp385
+Vtext
+p386
+VRamona, Ramona!
+p387
+sVused
+p388
+Vfalse
+p389
+sa(dp390
+Vtext
+p391
+VIs this burning an eternal flame?
+p392
+sVused
+p393
+Vfalse
+p394
+sa(dp395
+Vtext
+p396
+VIn my place, in my place, were lines that I couldn't trace!
+p397
+sVused
+p398
+Vfalse
+p399
+sa(dp400
+Vtext
+p401
+VI wanna know what love is! I want you to show me!
+p402
+sVused
+p403
+Vfalse
+p404
+sa(dp405
+Vtext
+p406
+VI've got another confession to make; I'm your fool!
+p407
+sVused
+p408
+Vfalse
+p409
+sa(dp410
+Vtext
+p411
+VTeach me how to understand Christmas!
+p412
+sVused
+p413
+Vfalse
+p414
+sa(dp415
+Vtext
+p416
+VTwo riders were approaching, and the wind began to howl!
+p417
+sVused
+p418
+Vfalse
+p419
+sa(dp420
+Vtext
+p421
+VWhooooo, are you!?
+p422
+sVused
+p423
+Vfalse
+p424
+sa(dp425
+Vtext
+p426
+VAll you touch, and all you see, is all your life will ever be...
+p427
+sVused
+p428
+Vfalse
+p429
+sa(dp430
+Vtext
+p431
+VIs there anybody out there?
+p432
+sVused
+p433
+Vfalse
+p434
+sa(dp435
+Vtext
+p436
+VThis is the tale of Captain Jack Sparrow - the pirate so brave, on the seven seas!
+p437
+sVused
+p438
+Vfalse
+p439
+sa(dp440
+Vtext
+p441
+VPush it to the limit!
+p442
+sVused
+p443
+Vfalse
+p444
+sa(dp445
+Vtext
+p446
+VI wanna know what love is! I want you to show me!
+p447
+sVused
+p448
+Vfalse
+p449
+sa(dp450
+Vtext
+p451
+VNow I will tell you what I've done for you; fifteen thousand tears I've cried!
+p452
+sVused
+p453
+Vfalse
+p454
+sa(dp455
+Vtext
+p456
+VHeaven is a halfpipe!
+p457
+sVused
+p458
+Vfalse
+p459
+sa(dp460
+Vtext
+p461
+VSay my name, say my name!
+p462
+sVused
+p463
+Vfalse
+p464
+sa(dp465
+Vtext
+p466
+VWhat's my age again?
+p467
+sVused
+p468
+Vfalse
+p469
+sa(dp470
+Vtext
+p471
+VFix up, look sharp!
+p472
+sVused
+p473
+Vfalse
+p474
+sa(dp475
+Vtext
+p476
+VGot so many clothes, I keep some at my aunt's house!
+p477
+sVused
+p478
+Vfalse
+p479
+sa(dp480
+Vtext
+p481
+VI bet that you look good on the dancefloor!
+p482
+sVused
+p483
+Vfalse
+p484
+sa(dp485
+Vtext
+p486
+VIt's looking like a beautiful day!
+p487
+sVused
+p488
+Vfalse
+p489
+sa(dp490
+Vtext
+p491
+VThrow those curtains wide; one day like this a year would see me rise!
+p492
+sVused
+p493
+Vfalse
+p494
+sa(dp495
+Vtext
+p496
+VDry your eyes mate, I know you want to make her see how much this pain hurts; but you've got to walk away now.
+p497
+sVused
+p498
+Vfalse
+p499
+sa(dp500
+Vtext
+p501
+VThis is the greatest and best song in the world; Tribute.
+p502
+sVused
+p503
+Vfalse
+p504
+sa(dp505
+Vtext
+p506
+VThese girls fall like dominoes!
+p507
+sVused
+p508
+Vfalse
+p509
+sa(dp510
+Vtext
+p511
+VIf you're having girl problems, I feel bad for you son; I got 99 problems, but a bitch ain't one!
+p512
+sVused
+p513
+Vfalse
+p514
+sa(dp515
+Vtext
+p516
+VShe was more like a beauty queen, from a movie scene!
+p517
+sVused
+p518
+Vfalse
+p519
+sa(dp520
+Vtext
+p521
+VTommy used to work on the dock!
+p522
+sVused
+p523
+Vfalse
+p524
+sa(dp525
+Vtext
+p526
+VYou never close your eyes anymore when I kiss your lips!
+p527
+sVused
+p528
+Vfalse
+p529
+sa(dp530
+Vtext
+p531
+VGo shorty, it's your birthday!
+p532
+sVused
+p533
+Vfalse
+p534
+sa(dp535
+Vtext
+p536
+VYou never close your eyes anymore when I kiss your lips!
+p537
+sVused
+p538
+Vfalse
+p539
+sa(dp540
+Vtext
+p541
+VGo shorty, it's your birthday!
+p542
+sVused
+p543
+Vfalse
+p544
+sa(dp545
+Vtext
+p546
+VDon't get me wrong though, there's boys in bands; and kids who like to scrap with pool cues in their hands.
+p547
+sVused
+p548
+Vfalse
+p549
+sa(dp550
+Vtext
+p551
+VThe only thing I'll ever ask of you, you've got to promise not to stop when I say when!
+p552
+sVused
+p553
+Vfalse
+p554
+sa(dp555
+Vtext
+p556
+VI've got soul, but I'm not a soldier!
+p557
+sVused
+p558
+Vfalse
+p559
+sa(dp560
+Vtext
+p561
+VI wish I was special - you're so fucking special!
+p562
+sVused
+p563
+Vfalse
+p564
+sa(dp565
+Vtext
+p566
+VThe drugs don't work, they just make things worse!
+p567
+sVused
+p568
+Vfalse
+p569
+sa(dp570
+Vtext
+p571
+VHappiness, hit her like a train on a track!
+p572
+sVused
+p573
+Vfalse
+p574
+sa(dp575
+Vtext
+p576
+VNo-one's gonna take me alive! The time has come to make things right!
+p577
+sVused
+p578
+Vfalse
+p579
+sa(dp580
+Vtext
+p581
+VThey won't see us waving from such great heights!
+p582
+sVused
+p583
+Vfalse
+p584
+sa(dp585
+Vtext
+p586
+VAt the car wash!
+p587
+sVused
+p588
+Vfalse
+p589
+sa(dp590
+Vtext
+p591
+VCome with me, willingly, and do such awful things; I think you'd find that a little bit exciting!
+p592
+sVused
+p593
+Vfalse
+p594
+sa(dp595
+Vtext
+p596
+VI wanna do bad things to you...
+p597
+sVused
+p598
+Vfalse
+p599
+sa(dp600
+Vtext
+p601
+VScream if you wanna go faster
+p602
+sVused
+p603
+Vfalse
+p604
+sa(dp605
+Vtext
+p606
+VHearts on fire, strong desire, burning deep within!
+p607
+sVused
+p608
+Vfalse
+p609
+sa(dp610
+Vtext
+p611
+VIt's the final countdown!
+p612
+sVused
+p613
+Vfalse
+p614
+sa(dp615
+Vtext
+p616
+VI just can't get you outta my head!
+p617
+sVused
+p618
+Vfalse
+p619
+sa(dp620
+Vtext
+p621
+VOops, I did it again!
+p622
+sVused
+p623
+Vfalse
+p624
+sa(dp625
+Vtext
+p626
+VAnd she's buying a stairway to heaven!
+p627
+sVused
+p628
+Vfalse
+p629
+sa(dp630
+Vtext
+p631
+VLet's get fucked up and die!
+p632
+sVused
+p633
+Vfalse
+p634
+sa(dp635
+Vtext
+p636
+VHey now, you're an all-star, get your game on, go play!
+p637
+sVused
+p638
+Vfalse
+p639
+sa(dp640
+Vtext
+p641
+VDon't worry, be happy!
+p642
+sVused
+p643
+Vfalse
+p644
+sa(dp645
+Vtext
+p646
+VYou don't know how you met me, you don't know why you can't turn around and say goodbye!
+p647
+sVused
+p648
+Vfalse
+p649
+sa(dp650
+Vtext
+p651
+VAnd it's written clear in my diary, today should have been ouranniversary...
+p652
+sVused
+p653
+Vfalse
+p654
+sa(dp655
+Vtext
+p656
+VTeenagers scare the living shit out of me!
+p657
+sVused
+p658
+Vfalse
+p659
+sa(dp660
+Vtext
+p661
+VI'm on my way, from misery to happiness today!
+p662
+sVused
+p663
+Vfalse
+p664
+sa(dp665
+Vtext
+p666
+VI would walk 500 miles, and I would walk 500 more=85
+p667
+sVused
+p668
+Vfalse
+p669
+sa(dp670
+Vtext
+p671
+VI said a bang, bang, a-bangiddy-bang, I said a bang-bang bangiddy-bang!
+p672
+sVused
+p673
+Vfalse
+p674
+sa(dp675
+Vtext
+p676
+VI need a few thins from the grocery, do things alone now most-er-ly...
+p677
+sVused
+p678
+Vfalse
+p679
+sa(dp680
+Vtext
+p681
+VI'm just a teenage dirtbag, baby!
+p682
+sVused
+p683
+Vfalse
+p684
+sa(dp685
+Vtext
+p686
+VHold tight, Sir Pimpleton!
+p687
+sVused
+p688
+Vfalse
+p689
+sa(dp690
+Vtext
+p691
+VOut to Ryan, out to Chuddy.
+p692
+sVused
+p693
+Vfalse
+p694
+sa(dp695
+Vtext
+p696
+VI can't help thinking, we could have had it all!
+p697
+sVused
+p698
+Vfalse
+p699
+sa(dp700
+Vtext
+p701
+VStep to the bass, and the lyrical swagger!
+p702
+sVused
+p703
+Vfalse
+p704
+sa(dp705
+Vtext
+p706
+VDo you love me, now that I can dance?
+p707
+sVused
+p708
+Vfalse
+p709
+sa(dp710
+Vtext
+p711
+VYou were always on my mind!
+p712
+sVused
+p713
+Vfalse
+p714
+sa(dp715
+Vtext
+p716
+VNo alarms and no surprises!
+p717
+sVused
+p718
+Vfalse
+p719
+sa(dp720
+Vtext
+p721
+VWell sometimes, I go out by myself, and I look across the water!
+p722
+sVused
+p723
+Vfalse
+p724
+sa(dp725
+Vtext
+p726
+VAll the young dudes, carry the news!
+p727
+sVused
+p728
+Vfalse
+p729
+sa(dp730
+Vtext
+p731
+VWithout love, where would you be now?
+p732
+sVused
+p733
+Vfalse
+p734
+sa(dp735
+Vtext
+p736
+VThere's a rat in me kitchen, what am me gonna do?
+p737
+sVused
+p738
+Vfalse
+p739
+sa(dp740
+Vtext
+p741
+VI wanna rock!
+p742
+sVused
+p743
+Vfalse
+p744
+sa(dp745
+Vtext
+p746
+VAnd I cherish you, my love!
+p747
+sVused
+p748
+Vfalse
+p749
+sa(dp750
+Vtext
+p751
+VYou! I want to take you to a gay bar!
+p752
+sVused
+p753
+Vfalse
+p754
+sa(dp755
+Vtext
+p756
+VHate to say I told you so!
+p757
+sVused
+p758
+Vfalse
+p759
+sa(dp760
+Vtext
+p761
+VI'm happy, feeling glad; I've got sunshine in a bag!
+p762
+sVused
+p763
+Vfalse
+p764
+sa(dp765
+Vtext
+p766
+VThe sun is a mass of incandescent gas, a gigantic nuclear furnace!
+p767
+sVused
+p768
+Vfalse
+p769
+sa(dp770
+Vtext
+p771
+VNothing lasts forever, in the cold november rain!
+p772
+sVused
+p773
+Vfalse
+p774
+sa(dp775
+Vtext
+p776
+VWhere do we go from here?
+p777
+sVused
+p778
+Vfalse
+p779
+sa(dp780
+Vtext
+p781
+VI touch the fire and it freezes me=85
+p782
+sVused
+p783
+Vfalse
+p784
+sa(dp785
+Vtext
+p786
+VDu, du hast, du hast mich!
+p787
+sVused
+p788
+Vfalse
+p789
+sa(dp790
+Vtext
+p791
+VRah rah Rasputin, lover of the Russian queen!
+p792
+sVused
+p793
+Vfalse
+p794
+sa(dp795
+Vtext
+p796
+VI walk a lonely road, the only road that I have ever known!
+p797
+sVused
+p798
+Vfalse
+p799
+sa(dp800
+Vtext
+p801
+VNothing lasts forever, in the cold november rain!
+p802
+sVused
+p803
+Vfalse
+p804
+sa(dp805
+Vtext
+p806
+VWhere do we go from here?
+p807
+sVused
+p808
+Vfalse
+p809
+sa(dp810
+Vtext
+p811
+VI touch the fire and it freezes me...
+p812
+sVused
+p813
+Vfalse
+p814
+sa(dp815
+Vtext
+p816
+VDu, du hast, du hast mich!
+p817
+sVused
+p818
+Vfalse
+p819
+sa(dp820
+Vtext
+p821
+VGod gave rock and roll to you!
+p822
+sVused
+p823
+Vfalse
+p824
+sa(dp825
+Vtext
+p826
+VBlock-rockin' beats!
+p827
+sVused
+p828
+Vfalse
+p829
+sa(dp830
+Vtext
+p831
+VSittin' on the dock of the bay!
+p832
+sVused
+p833
+Vfalse
+p834
+sa(dp835
+Vtext
+p836
+VReach out and touch faith!
+p837
+sVused
+p838
+Vfalse
+p839
+sa(dp840
+Vtext
+p841
+VLove is the answer, at least to most of the questions in my heart
+p842
+sVused
+p843
+Vfalse
+p844
+sa(dp845
+Vtext
+p846
+VGod loves his children!
+p847
+sVused
+p848
+Vfalse
+p849
+sa(dp850
+Vtext
+p851
+VI'm the hip-hop-apotamus, my rhymes are bottomless...
+p852
+sVused
+p853
+Vfalse
+p854
+sa(dp855
+Vtext
+p856
+VChange your heart...look around you...
+p857
+sVused
+p858
+Vfalse
+p859
+sa(dp860
+Vtext
+p861
+VTest test text
+p862
+sVused
+p863
+Vfalse
+p864
+sa(dp865
+Vtext
+p866
+VDo you really want to hurt me? Do you really want to make me cry?
+p867
+sVused
+p868
+Vfalse
+p869
+sa.

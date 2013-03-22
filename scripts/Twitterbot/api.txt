@@ -1,0 +1,845 @@
+Help on class Api in module twitter:
+
+class Api(__builtin__.object)
+ |  A python interface into the Twitter API
+ |  
+ |  By default, the Api caches results for 1 minute.
+ |  
+ |  Example usage:
+ |  
+ |    To create an instance of the twitter.Api class, with no authentication:
+ |  
+ |      >>> import twitter
+ |      >>> api = twitter.Api()
+ |  
+ |    To fetch the most recently posted public twitter status messages:
+ |  
+ |      >>> statuses = api.GetPublicTimeline()
+ |      >>> print [s.user.name for s in statuses]
+ |      [u'DeWitt', u'Kesuke Miyagi', u'ev', u'Buzz Andersen', u'Biz Stone'] #...
+ |  
+ |    To fetch a single user's public status messages, where "user" is either
+ |    a Twitter "short name" or their user id.
+ |  
+ |      >>> statuses = api.GetUserTimeline(user)
+ |      >>> print [s.text for s in statuses]
+ |  
+ |    To use authentication, instantiate the twitter.Api class with a
+ |    consumer key and secret; and the oAuth key and secret:
+ |  
+ |      >>> api = twitter.Api(consumer_key='twitter consumer key',
+ |                            consumer_secret='twitter consumer secret',
+ |                            access_token_key='the_key_given',
+ |                            access_token_secret='the_key_secret')
+ |  
+ |    To fetch your friends (after being authenticated):
+ |  
+ |      >>> users = api.GetFriends()
+ |      >>> print [u.name for u in users]
+ |  
+ |    To post a twitter status message (after being authenticated):
+ |  
+ |      >>> status = api.PostUpdate('I love python-twitter!')
+ |      >>> print status.text
+ |      I love python-twitter!
+ |  
+ |    There are many other methods, including:
+ |  
+ |      >>> api.PostUpdates(status)
+ |      >>> api.PostDirectMessage(user, text)
+ |      >>> api.GetUser(user)
+ |      >>> api.GetReplies()
+ |      >>> api.GetUserTimeline(user)
+ |      >>> api.GetStatus(id)
+ |      >>> api.DestroyStatus(id)
+ |      >>> api.GetFriendsTimeline(user)
+ |      >>> api.GetFriends(user)
+ |      >>> api.GetFollowers()
+ |      >>> api.GetFeatured()
+ |      >>> api.GetDirectMessages()
+ |      >>> api.PostDirectMessage(user, text)
+ |      >>> api.DestroyDirectMessage(id)
+ |      >>> api.DestroyFriendship(user)
+ |      >>> api.CreateFriendship(user)
+ |      >>> api.GetUserByEmail(email)
+ |      >>> api.VerifyCredentials()
+ |  
+ |  Methods defined here:
+ |  
+ |  ClearCredentials(self)
+ |      Clear the any credentials for this instance
+ |  
+ |  CreateFavorite(self, status)
+ |      Favorites the status specified in the status parameter as the authenticating user.
+ |      Returns the favorite status when successful.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        The twitter.Status instance to mark as a favorite.
+ |      Returns:
+ |        A twitter.Status instance representing the newly-marked favorite.
+ |  
+ |  CreateFriendship(self, user)
+ |      Befriends the user specified in the user parameter as the authenticating user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        The ID or screen name of the user to befriend.
+ |      Returns:
+ |        A twitter.User instance representing the befriended user.
+ |  
+ |  CreateList(self, user, name, mode=None, description=None)
+ |      Creates a new list with the give name
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user:
+ |          Twitter name to create the list for
+ |        name:
+ |          New name for the list
+ |        mode:
+ |          'public' or 'private'.
+ |          Defaults to 'public'. [Optional]
+ |        description:
+ |          Description of the list. [Optional]
+ |      
+ |      Returns:
+ |        A twitter.List instance representing the new list
+ |  
+ |  CreateSubscription(self, owner, list)
+ |      Creates a subscription to a list by the authenticated user
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        owner:
+ |          User name or id of the owner of the list being subscribed to.
+ |        list:
+ |          The slug or list id to subscribe the user to
+ |      
+ |      Returns:
+ |        A twitter.List instance representing the list subscribed to
+ |  
+ |  DestroyDirectMessage(self, id)
+ |      Destroys the direct message specified in the required ID parameter.
+ |      
+ |      The twitter.Api instance must be authenticated, and the
+ |      authenticating user must be the recipient of the specified direct
+ |      message.
+ |      
+ |      Args:
+ |        id: The id of the direct message to be destroyed
+ |      
+ |      Returns:
+ |        A twitter.DirectMessage instance representing the message destroyed
+ |  
+ |  DestroyFavorite(self, status)
+ |      Un-favorites the status specified in the ID parameter as the authenticating user.
+ |      Returns the un-favorited status in the requested format when successful.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        The twitter.Status to unmark as a favorite.
+ |      Returns:
+ |        A twitter.Status instance representing the newly-unmarked favorite.
+ |  
+ |  DestroyFriendship(self, user)
+ |      Discontinues friendship with the user specified in the user parameter.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        The ID or screen name of the user  with whom to discontinue friendship.
+ |      Returns:
+ |        A twitter.User instance representing the discontinued friend.
+ |  
+ |  DestroyList(self, user, id)
+ |      Destroys the list from the given user
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user:
+ |          The user to remove the list from.
+ |        id:
+ |          The slug or id of the list to remove.
+ |      Returns:
+ |        A twitter.List instance representing the removed list.
+ |  
+ |  DestroyStatus(self, id)
+ |      Destroys the status specified by the required ID parameter.
+ |      
+ |      The twitter.Api instance must be authenticated and the
+ |      authenticating user must be the author of the specified status.
+ |      
+ |      Args:
+ |        id:
+ |          The numerical ID of the status you're trying to destroy.
+ |      
+ |      Returns:
+ |        A twitter.Status instance representing the destroyed status message
+ |  
+ |  DestroySubscription(self, owner, list)
+ |      Destroys the subscription to a list for the authenticated user
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        owner:
+ |          The user id or screen name of the user that owns the
+ |          list that is to be unsubscribed from
+ |        list:
+ |          The slug or list id of the list to unsubscribe from
+ |      
+ |      Returns:
+ |        A twitter.List instance representing the removed list.
+ |  
+ |  FilterPublicTimeline(self, term, since_id=None)
+ |      Filter the public twitter timeline by a given search term on
+ |      the local machine.
+ |      
+ |      Args:
+ |        term:
+ |          term to search by.
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each message
+ |        containing the term
+ |  
+ |  GetDirectMessages(self, since=None, since_id=None, page=None)
+ |      Returns a list of the direct messages sent to the authenticating user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        since:
+ |          Narrows the returned results to just those statuses created
+ |          after the specified HTTP-formatted date. [Optional]
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.DirectMessage instances
+ |  
+ |  GetFavorites(self, user=None, page=None)
+ |      Return a list of Status objects representing favorited tweets.
+ |      By default, returns the (up to) 20 most recent tweets for the
+ |      authenticated user.
+ |      
+ |      Args:
+ |        user:
+ |          The twitter name or id of the user whose favorites you are fetching.
+ |          If not specified, defaults to the authenticated user. [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |  
+ |  GetFeatured(self)
+ |      Fetch the sequence of twitter.User instances featured on twitter.com
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Returns:
+ |        A sequence of twitter.User instances
+ |  
+ |  GetFollowerIDs(self, userid=None, cursor=-1)
+ |      Fetch the sequence of twitter.User instances, one for each follower
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Returns:
+ |        A sequence of twitter.User instances, one for each follower
+ |  
+ |  GetFollowers(self, page=None)
+ |      Fetch the sequence of twitter.User instances, one for each follower
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.User instances, one for each follower
+ |  
+ |  GetFriendIDs(self, user=None, cursor=-1)
+ |      Returns a list of twitter user id's for every person
+ |      the specified user is following.
+ |      
+ |      Args:
+ |        user:
+ |          The id or screen_name of the user to retrieve the id list for
+ |          [Optional]
+ |      
+ |      Returns:
+ |        A list of integers, one for each user id.
+ |  
+ |  GetFriends(self, user=None, cursor=-1)
+ |      Fetch the sequence of twitter.User instances, one for each friend.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user:
+ |          The twitter name or id of the user whose friends you are fetching.
+ |          If not specified, defaults to the authenticated user. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.User instances, one for each friend
+ |  
+ |  GetFriendsTimeline(self, user=None, count=None, page=None, since_id=None, retweets=None, include_entities=None)
+ |      Fetch the sequence of twitter.Status messages for a user's friends
+ |      
+ |      The twitter.Api instance must be authenticated if the user is private.
+ |      
+ |      Args:
+ |        user:
+ |          Specifies the ID or screen name of the user for whom to return
+ |          the friends_timeline.  If not specified then the authenticated
+ |          user set in the twitter.Api instance will be used.  [Optional]
+ |        count:
+ |          Specifies the number of statuses to retrieve. May not be
+ |          greater than 100. [Optional]
+ |        page:
+ |           Specifies the page of results to retrieve.
+ |           Note: there are pagination limits. [Optional]
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        retweets:
+ |          If True, the timeline will contain native retweets. [Optional]
+ |        include_entities:
+ |          If True, each tweet will include a node called "entities,".
+ |          This node offers a variety of metadata about the tweet in a
+ |          discreet structure, including: user_mentions, urls, and
+ |          hashtags. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each message
+ |  
+ |  GetLists(self, user, cursor=-1)
+ |      Fetch the sequence of lists for a user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user:
+ |          The twitter name or id of the user whose friends you are fetching.
+ |          If the passed in user is the same as the authenticated user
+ |          then you will also receive private list data.
+ |        cursor:
+ |          "page" value that Twitter will use to start building the
+ |          list sequence from.  -1 to start at the beginning.
+ |          Twitter will return in the result the values for next_cursor
+ |          and previous_cursor. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.List instances, one for each list
+ |  
+ |  GetMentions(self, since_id=None, max_id=None, page=None)
+ |      Returns the 20 most recent mentions (status containing @twitterID)
+ |      for the authenticating user.
+ |      
+ |      Args:
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        max_id:
+ |          Returns only statuses with an ID less than
+ |          (that is, older than) the specified ID.  [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each mention of the user.
+ |  
+ |  GetPublicTimeline(self, since_id=None, include_rts=None, include_entities=None)
+ |      Fetch the sequence of public twitter.Status message for all users.
+ |      
+ |      Args:
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        include_rts:
+ |          If True, the timeline will contain native retweets (if they
+ |          exist) in addition to the standard stream of tweets. [Optional]
+ |        include_entities:
+ |          If True, each tweet will include a node called "entities,".
+ |          This node offers a variety of metadata about the tweet in a
+ |          discreet structure, including: user_mentions, urls, and
+ |          hashtags. [Optional]
+ |      
+ |      Returns:
+ |        An sequence of twitter.Status instances, one for each message
+ |  
+ |  GetRateLimitStatus(self)
+ |      Fetch the rate limit status for the currently authorized user.
+ |      
+ |      Returns:
+ |        A dictionary containing the time the limit will reset (reset_time),
+ |        the number of remaining hits allowed before the reset (remaining_hits),
+ |        the number of hits allowed in a 60-minute period (hourly_limit), and
+ |        the time of the reset in seconds since The Epoch (reset_time_in_seconds).
+ |  
+ |  GetReplies(self, since=None, since_id=None, page=None)
+ |      Get a sequence of status messages representing the 20 most
+ |      recent replies (status updates prefixed with @twitterID) to the
+ |      authenticating user.
+ |      
+ |      Args:
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |        since:
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each reply to the user.
+ |  
+ |  GetRetweets(self, statusid)
+ |      Returns up to 100 of the first retweets of the tweet identified
+ |      by statusid
+ |      
+ |      Args:
+ |        statusid:
+ |          The ID of the tweet for which retweets should be searched for
+ |      
+ |      Returns:
+ |        A list of twitter.Status instances, which are retweets of statusid
+ |  
+ |  GetSearch(self, term=None, geocode=None, since_id=None, per_page=15, page=1, lang='en', show_user='true', query_users=False)
+ |      Return twitter search results for a given term.
+ |      
+ |      Args:
+ |        term:
+ |          term to search by. Optional if you include geocode.
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        geocode:
+ |          geolocation information in the form (latitude, longitude, radius)
+ |          [Optional]
+ |        per_page:
+ |          number of results to return.  Default is 15 [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |        lang:
+ |          language for results.  Default is English [Optional]
+ |        show_user:
+ |          prefixes screen name in status
+ |        query_users:
+ |          If set to False, then all users only have screen_name and
+ |          profile_image_url available.
+ |          If set to True, all information of users are available,
+ |          but it uses lots of request quota, one per status.
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each message containing
+ |        the term
+ |  
+ |  GetStatus(self, id)
+ |      Returns a single status message.
+ |      
+ |      The twitter.Api instance must be authenticated if the
+ |      status message is private.
+ |      
+ |      Args:
+ |        id:
+ |          The numeric ID of the status you are trying to retrieve.
+ |      
+ |      Returns:
+ |        A twitter.Status instance representing that status message
+ |  
+ |  GetSubscriptions(self, user, cursor=-1)
+ |      Fetch the sequence of Lists that the given user is subscribed to
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user:
+ |          The twitter name or id of the user
+ |        cursor:
+ |          "page" value that Twitter will use to start building the
+ |          list sequence from.  -1 to start at the beginning.
+ |          Twitter will return in the result the values for next_cursor
+ |          and previous_cursor. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.List instances, one for each list
+ |  
+ |  GetTrendsCurrent(self, exclude=None)
+ |      Get the current top trending topics
+ |      
+ |      Args:
+ |        exclude:
+ |          Appends the exclude parameter as a request parameter.
+ |          Currently only exclude=hashtags is supported. [Optional]
+ |      
+ |      Returns:
+ |        A list with 10 entries. Each entry contains the twitter.
+ |  
+ |  GetTrendsDaily(self, exclude=None, startdate=None)
+ |      Get the current top trending topics for each hour in a given day
+ |      
+ |      Args:
+ |        startdate:
+ |          The start date for the report.
+ |          Should be in the format YYYY-MM-DD. [Optional]
+ |        exclude:
+ |          Appends the exclude parameter as a request parameter.
+ |          Currently only exclude=hashtags is supported. [Optional]
+ |      
+ |      Returns:
+ |        A list with 24 entries. Each entry contains the twitter.
+ |        Trend elements that were trending at the corresponding hour of the day.
+ |  
+ |  GetTrendsWeekly(self, exclude=None, startdate=None)
+ |      Get the top 30 trending topics for each day in a given week.
+ |      
+ |      Args:
+ |        startdate:
+ |          The start date for the report.
+ |          Should be in the format YYYY-MM-DD. [Optional]
+ |        exclude:
+ |          Appends the exclude parameter as a request parameter.
+ |          Currently only exclude=hashtags is supported. [Optional]
+ |      Returns:
+ |        A list with each entry contains the twitter.
+ |        Trend elements of trending topics for the corrsponding day of the week
+ |  
+ |  GetUser(self, user)
+ |      Returns a single user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user: The twitter name or id of the user to retrieve.
+ |      
+ |      Returns:
+ |        A twitter.User instance representing that user
+ |  
+ |  GetUserByEmail(self, email)
+ |      Returns a single user by email address.
+ |      
+ |      Args:
+ |        email:
+ |          The email of the user to retrieve.
+ |      
+ |      Returns:
+ |        A twitter.User instance representing that user
+ |  
+ |  GetUserRetweets(self, count=None, since_id=None, max_id=None, include_entities=False)
+ |      Fetch the sequence of retweets made by a single user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        count:
+ |          The number of status messages to retrieve. [Optional]
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        max_id:
+ |          Returns results with an ID less than (that is, older than) or
+ |          equal to the specified ID. [Optional]
+ |        include_entities:
+ |          If True, each tweet will include a node called "entities,".
+ |          This node offers a variety of metadata about the tweet in a
+ |          discreet structure, including: user_mentions, urls, and
+ |          hashtags. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of twitter.Status instances, one for each message up to count
+ |  
+ |  GetUserTimeline(self, id=None, user_id=None, screen_name=None, since_id=None, max_id=None, count=None, page=None, include_rts=None, include_entities=None)
+ |      Fetch the sequence of public Status messages for a single user.
+ |      
+ |      The twitter.Api instance must be authenticated if the user is private.
+ |      
+ |      Args:
+ |        id:
+ |          Specifies the ID or screen name of the user for whom to return
+ |          the user_timeline. [Optional]
+ |        user_id:
+ |          Specfies the ID of the user for whom to return the
+ |          user_timeline. Helpful for disambiguating when a valid user ID
+ |          is also a valid screen name. [Optional]
+ |        screen_name:
+ |          Specfies the screen name of the user for whom to return the
+ |          user_timeline. Helpful for disambiguating when a valid screen
+ |          name is also a user ID. [Optional]
+ |        since_id:
+ |          Returns results with an ID greater than (that is, more recent
+ |          than) the specified ID. There are limits to the number of
+ |          Tweets which can be accessed through the API. If the limit of
+ |          Tweets has occured since the since_id, the since_id will be
+ |          forced to the oldest ID available. [Optional]
+ |        max_id:
+ |          Returns only statuses with an ID less than (that is, older
+ |          than) or equal to the specified ID. [Optional]
+ |        count:
+ |          Specifies the number of statuses to retrieve. May not be
+ |          greater than 200.  [Optional]
+ |        page:
+ |          Specifies the page of results to retrieve.
+ |          Note: there are pagination limits. [Optional]
+ |        include_rts:
+ |          If True, the timeline will contain native retweets (if they
+ |          exist) in addition to the standard stream of tweets. [Optional]
+ |        include_entities:
+ |          If True, each tweet will include a node called "entities,".
+ |          This node offers a variety of metadata about the tweet in a
+ |          discreet structure, including: user_mentions, urls, and
+ |          hashtags. [Optional]
+ |      
+ |      Returns:
+ |        A sequence of Status instances, one for each message up to count
+ |  
+ |  MaximumHitFrequency(self)
+ |      Determines the minimum number of seconds that a program must wait
+ |      before hitting the server again without exceeding the rate_limit
+ |      imposed for the currently authenticated user.
+ |      
+ |      Returns:
+ |        The minimum second interval that a program must use so as to not
+ |        exceed the rate_limit imposed for the user.
+ |  
+ |  PostDirectMessage(self, user, text)
+ |      Post a twitter direct message from the authenticated user
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user: The ID or screen name of the recipient user.
+ |        text: The message text to be posted.  Must be less than 140 characters.
+ |      
+ |      Returns:
+ |        A twitter.DirectMessage instance representing the message posted
+ |  
+ |  PostUpdate(self, status, in_reply_to_status_id=None)
+ |      Post a twitter status message from the authenticated user.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        status:
+ |          The message text to be posted.
+ |          Must be less than or equal to 140 characters.
+ |        in_reply_to_status_id:
+ |          The ID of an existing status that the status to be posted is
+ |          in reply to.  This implicitly sets the in_reply_to_user_id
+ |          attribute of the resulting status to the user ID of the
+ |          message being replied to.  Invalid/missing status IDs will be
+ |          ignored. [Optional]
+ |      Returns:
+ |        A twitter.Status instance representing the message posted.
+ |  
+ |  PostUpdates(self, status, continuation=None, **kwargs)
+ |      Post one or more twitter status messages from the authenticated user.
+ |      
+ |      Unlike api.PostUpdate, this method will post multiple status updates
+ |      if the message is longer than 140 characters.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        status:
+ |          The message text to be posted.
+ |          May be longer than 140 characters.
+ |        continuation:
+ |          The character string, if any, to be appended to all but the
+ |          last message.  Note that Twitter strips trailing '...' strings
+ |          from messages.  Consider using the unicode \u2026 character
+ |          (horizontal ellipsis) instead. [Defaults to None]
+ |        **kwargs:
+ |          See api.PostUpdate for a list of accepted parameters.
+ |      
+ |      Returns:
+ |        A of list twitter.Status instance representing the messages posted.
+ |  
+ |  SetCache(self, cache)
+ |      Override the default cache.  Set to None to prevent caching.
+ |      
+ |      Args:
+ |        cache:
+ |          An instance that supports the same API as the twitter._FileCache
+ |  
+ |  SetCacheTimeout(self, cache_timeout)
+ |      Override the default cache timeout.
+ |      
+ |      Args:
+ |        cache_timeout:
+ |          Time, in seconds, that responses should be reused.
+ |  
+ |  SetCredentials(self, consumer_key, consumer_secret, access_token_key=None, access_token_secret=None)
+ |      Set the consumer_key and consumer_secret for this instance
+ |      
+ |      Args:
+ |        consumer_key:
+ |          The consumer_key of the twitter account.
+ |        consumer_secret:
+ |          The consumer_secret for the twitter account.
+ |        access_token_key:
+ |          The oAuth access token key value you retrieved
+ |          from running get_access_token.py.
+ |        access_token_secret:
+ |          The oAuth access token's secret, also retrieved
+ |          from the get_access_token.py run.
+ |  
+ |  SetSource(self, source)
+ |      Suggest the "from source" value to be displayed on the Twitter web site.
+ |      
+ |      The value of the 'source' parameter must be first recognized by
+ |      the Twitter server.  New source values are authorized on a case by
+ |      case basis by the Twitter development team.
+ |      
+ |      Args:
+ |        source:
+ |          The source name as a string.  Will be sent to the server as
+ |          the 'source' parameter.
+ |  
+ |  SetUrllib(self, urllib)
+ |      Override the default urllib implementation.
+ |      
+ |      Args:
+ |        urllib:
+ |          An instance that supports the same API as the urllib2 module
+ |  
+ |  SetUserAgent(self, user_agent)
+ |      Override the default user agent
+ |      
+ |      Args:
+ |        user_agent:
+ |          A string that should be send to the server as the User-agent
+ |  
+ |  SetXTwitterHeaders(self, client, url, version)
+ |      Set the X-Twitter HTTP headers that will be sent to the server.
+ |      
+ |      Args:
+ |        client:
+ |           The client name as a string.  Will be sent to the server as
+ |           the 'X-Twitter-Client' header.
+ |        url:
+ |           The URL of the meta.xml as a string.  Will be sent to the server
+ |           as the 'X-Twitter-Client-URL' header.
+ |        version:
+ |           The client version as a string.  Will be sent to the server
+ |           as the 'X-Twitter-Client-Version' header.
+ |  
+ |  UsersLookup(self, user_id=None, screen_name=None, users=None)
+ |      Fetch extended information for the specified users.
+ |      
+ |      Users may be specified either as lists of either user_ids,
+ |      screen_names, or twitter.User objects. The list of users that
+ |      are queried is the union of all specified parameters.
+ |      
+ |      The twitter.Api instance must be authenticated.
+ |      
+ |      Args:
+ |        user_id:
+ |          A list of user_ids to retrieve extended information.
+ |          [Optional]
+ |        screen_name:
+ |          A list of screen_names to retrieve extended information.
+ |          [Optional]
+ |        users:
+ |          A list of twitter.User objects to retrieve extended information.
+ |          [Optional]
+ |      
+ |      Returns:
+ |        A list of twitter.User objects for the requested users
+ |  
+ |  VerifyCredentials(self)
+ |      Returns a twitter.User instance if the authenticating user is valid.
+ |      
+ |      Returns:
+ |        A twitter.User instance representing that user if the
+ |        credentials are valid, None otherwise.
+ |  
+ |  __init__(self, consumer_key=None, consumer_secret=None, access_token_key=None, access_token_secret=None, input_encoding=None, request_headers=None, cache=<object object>, shortner=None, base_url=None, use_gzip_compression=False, debugHTTP=False)
+ |      Instantiate a new twitter.Api object.
+ |      
+ |      Args:
+ |        consumer_key:
+ |          Your Twitter user's consumer_key.
+ |        consumer_secret:
+ |          Your Twitter user's consumer_secret.
+ |        access_token_key:
+ |          The oAuth access token key value you retrieved
+ |          from running get_access_token.py.
+ |        access_token_secret:
+ |          The oAuth access token's secret, also retrieved
+ |          from the get_access_token.py run.
+ |        input_encoding:
+ |          The encoding used to encode input strings. [Optional]
+ |        request_header:
+ |          A dictionary of additional HTTP request headers. [Optional]
+ |        cache:
+ |          The cache instance to use. Defaults to DEFAULT_CACHE.
+ |          Use None to disable caching. [Optional]
+ |        shortner:
+ |          The shortner instance to use.  Defaults to None.
+ |          See shorten_url.py for an example shortner. [Optional]
+ |        base_url:
+ |          The base URL to use to contact the Twitter API.
+ |          Defaults to https://twitter.com. [Optional]
+ |        use_gzip_compression:
+ |          Set to True to tell enable gzip compression for any call
+ |          made to Twitter.  Defaults to False. [Optional]
+ |        debugHTTP:
+ |          Set to True to enable debug output from urllib2 when performing
+ |          any HTTP requests.  Defaults to False. [Optional]
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  DEFAULT_CACHE_TIMEOUT = 60

@@ -1,0 +1,103 @@
+<html>
+<head>
+	<title>Jack Jackson's webpage</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/json2.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/flexslider.css" />
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>  
+  <div id="mainWrapper" class="mainWrapper">
+      <h1>Welcome to my little bit of internet.</h1>
+      
+      <p>
+      Obviously, this page has a lot more work to be done before it's fit for public
+      consumption - so you should feel honoured if you're seeing it now!
+      </p>
+      
+      <p>
+      For now, I recommend you check out 
+      <a href="http://www.twitter.com/scubbo">my Twitter feed</a> 
+      for my ephemeral thoughts and musings, or 
+      <a href="http://nftnf.blogspot.com">my blog</a> 
+      for more cogent and fully-formed thought-nuggets.
+      </p>
+    
+  	<div id="spamContainer" class="spamContainer clearfix" style="display:none;">
+  		<div id="blogContainer" class="blogContainer">
+  		  <h3 id="mainBlogTitle" class="mainBlogTitle mainTitle">Blog Posts</h3>
+  		
+      </div>
+      <div id="tweetContainer" class="tweetContainer">
+        <h3 id="mainTweetTitle" class="mainTweetTitle mainTitle">Tweets</h3>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    function loadXMLDoc(dname)
+    {
+    if (window.XMLHttpRequest)
+      {
+      xhttp=new XMLHttpRequest();
+      }
+    else
+      {
+      xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xhttp.open("GET",dname,false);
+    xhttp.send("");
+    return xhttp.responseXML;
+    }
+    
+    xmlDoc=loadXMLDoc("/nftnfrss.xml");
+    
+    items = xmlDoc.getElementsByTagName("item");
+    
+    for (var i=0;i<3;i++) {
+      var newDiv = document.createElement('div');
+      newDiv.setAttribute('id', 'blogEntryWrapper'+i.toString());
+      newDiv.setAttribute('class', 'blogEntryWrapper blogEntryWrapper'+i.toString());
+      var postTitle = document.createElement('h3');
+      var postTitleContents = document.createTextNode(items[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+      postTitle.appendChild(postTitleContents);
+      var postBody = document.createElement('p');
+      var postBodyContents = items[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+      var theIndex = postBodyContents.indexOf('<br');
+      postBodyContents = postBodyContents.substring(0, theIndex);
+      $(postBody).html(postBodyContents);
+  
+      newDiv.appendChild(postTitle);
+      newDiv.appendChild(postBody);
+      $('.blogContainer').append(newDiv);
+    }
+    
+    $(document).ready(function() {
+        $.post("/scripts/tweets.py", {limit:'5'}, 
+            function(data) {
+                var theTweets = data;
+                for (var i=0;i<theTweets.length;i++) {
+                    var newDiv = document.createElement('div');
+                    newDiv.setAttribute('id', 'tweetWrapper'+i.toString());
+                    newDiv.setAttribute('class', 'tweetWrapper tweetWrapper'+i.toString());
+                    var postTitle = document.createElement('h3');
+                    var postTitleContents = document.createTextNode(theTweets[i]['title']);
+                    postTitle.appendChild(postTitleContents);
+                    
+                    newDiv.appendChild(postTitle);
+                    $('.tweetContainer').append(newDiv);
+                }
+            }
+        );
+    });
+    
+  </script>
+  
+</body>
+</html>

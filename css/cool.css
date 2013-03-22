@@ -1,0 +1,80 @@
+/* CSS Document */
+h2 {
+  margin-bottom:20px;
+}
+.slides {
+	height: 100px;	
+}
+.slides li {
+	height:100px;
+	line-height:100px;	
+}
+.slides li img {
+    float:left;
+    margin-left:200px;
+}
+.slides li img.flipme {
+    float:right;
+    margin-left:0px;
+    margin-right:200px;
+}
+.coolThing {
+	border-bottom:1px dashed #444;
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+}
+.coolThingsWrapper {
+	text-align:left;
+	margin-left:20px;
+	margin-right:20px;
+}
+.subwordsPuzzleCallout {
+	background: #3B5998;
+	margin:10px 30px;
+	padding:20px;
+	color:white;
+	font-family:Lucida Console;
+}
+.subwordsPuzzleCallout p {
+  font-family:Lucida Console;
+}
+.entertainmentOutput {
+	padding:20px;
+	background-repeat:no-repeat;
+	background-position:10px;
+	margin-top:10px;
+	margin-left:40px;
+	margin-right:40px;
+	background-color:#DDD;
+}
+.entertainmentOutput ol {
+    margin-left:20px;
+}
+.flipme {
+    -webkit-transform:scaleX(-1);
+    -moz-transform:scaleX(-1);
+    -ms-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+}
+.lyricsSave {
+    display:none;
+}
+.lyricsList {
+    list-style-type:none;
+}
+.lyricsAdminList {
+    border-collapse:collapse;
+    margin-top:10px;
+}
+.lyricsAdminList td, .lyricsAdminList th {
+    padding:3px;
+    border:1px solid black;
+}
+.lyricsAdminList input.lyric {
+    width:100%;
+}
+.lyricsAdminList td.usedCell {
+    padding-left:12px;
+}

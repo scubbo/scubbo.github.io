@@ -1,0 +1,226 @@
+<html>
+<head>
+	<title>Cool stuff!</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/json2.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/flexslider.css" />
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/cool.css" />
+	<script type="text/javascript" src="/js/tweetStream.js" ></script>
+</head>
+
+<body>
+  <div id="mainWrapper" class="mainWrapper">
+    <h2>Some of the nerdy things I've been tinkering around with in my free time</h2>
+    <h3>(Click to find out more)</h3>
+	<div id="coolThingsSlider" class="coolThingsSlider">
+    	<ul class="slides">
+        	<li rel="subwords">Subword finder</li>
+            <li rel="trexlyrics"><img src='/images/Trex.jpg' />Trex Lyrics<img class='flipme' src='/images/Trex.jpg' /></li>
+            <li rel="tweetStreamPanel">tweetStream</li>
+        </ul>
+    <div>
+    <div id="coolThingsWrapper" class="coolThingsWrapper">
+      <div id="subwords" class="subwords coolThing">
+        <p><a href="https://www.facebook.com/amybhughes">Amy Buchanan-Hughes</a>, a friend of mine from Uni who runs the following <a href="http://www.tasteforscience.org">awesome charity</a>, posed the following interesting <a href="https://www.facebook.com/amybhughes/posts/10150607409027098">puzzle</a> on Facebook:</p>
+        <div id="subwordsPuzzleCallout" class="subwordsPuzzleCallout">
+          <p>Challenge: See how many words you can make using the letters from "entertainment", but *only* in the order they originally appear, i.e. tram is fine but meat is not.</p>
+        <div>
+        <p>As I've already <a href="http://nftnf.blogspot.co.uk/2012/03/quick-and-dirty-bit-of-fun.html">blogged</a>, I knocked up a quick Python script to solve it, which can be viewed <a href="entertainment.py.txt">here</a>.  I'm going to take this opportunity once again to beseech you, if you like interesting challenges but haven't yet dabbled in programming, to download Python (available <a href="http://python.org/download/">here</a>, among many other places) and have a play around (<a href="http://projecteuler.net/">Project Euler</a> and <a href="http://singpath.appspot.com/alex/index.html">singPath</a> are good challenges to get you motivated). Programming is...well, it's just awesome!</p>
+        <p>The puzzle was intended to illustrate <a href="http://en.wikipedia.org/Alternative_splicing">alternative splicing</a>, a phenomenon which lets cells make more than one product from the same gene. After the DNA has been transcribed to RNA, loops of the RNA are spliced out (like crossing out letters from 'entertainment'). Different loops can be spliced out in different cells, leaving different messages - in one type of tissue it might leave 'trim' while in another it would say 'eat'. This can have huge effects - at least half of human genetic diseases are caused by alternative splicing going wrong.</p>
+        <p>Below is a web interface that let's you solve the puzzle (for any word) from a web browser.</p>
+        <input type="text" id="entertainmentInput" class="entertainmentInput" text="entertainment" />
+        <input type="button" runat="server" id="entertainMe" class="entertainMe" />
+        <div id="entertainmentOutput" class="entertainmentOutput"><div>
+      <div>
+      
+      <script type="text/javascript">
+		$(document).ready(function() {
+		  $('.entertainMe').click(function() {
+			var theParent = $('.entertainmentInput').val();
+			$('.entertainmentOutput').attr('style', 'background-image:url(../../images/ajax-loader.gif);');
+			$.post("/scripts/entertainmentWeb.py", {parentWord: theParent}, 
+			  function(data) {
+				$('.entertainmentOutput').attr('style', 'background-image:none;');
+				var theData = data.split(':');
+				console.log(theData.length);
+				if (theData.length > 2) {
+				  var theFinalString = '';
+				  if (theData.length > 3) {
+					theFinalString += 'There were '+theData[0]+' sub-words of '+theParent+':';
+				  } else {
+					theFinalString += 'There was only one sub-word of '+theParent+':';
+				  }
+				  theFinalString += '<br><ol>';
+				  for (var i = 1;i<theData.length-1;i++) {
+					theFinalString += '<li>' + theData[i] + '</li>';
+				  }
+				  theFinalString += '</ol>';
+				} else {
+				  $('.entertainmentOutput').html('Sorry, there are no sub-words for this word.');
+				}
+				$('.entertainmentOutput').html(theFinalString);
+			  }
+			);
+			return false;
+		  });
+		  
+		});
+	  </script>
+            
+    
+
+        <div id="trexlyrics" class="coolThing trexlyrics">
+            <p>I also made a lyrics bot that you can find <a href="http://www.twitter.com/trexlyrics">here</a>, inspired by <a href="http://www.qwantz.com/index.php?comic=2121">this comic</a>. I'll write some more about it later (and hopefully include a lyrics submission page here), but for now, tweet at him and he'll reply to you!</p>
+            <p>UPDATE: The server on which the trexlyrics program is hosted has been a bit sketchy recently - <a href="/sections/contact">let me know</a> if you don't get a reply or if Trex doesn't tweet for a day or so.</p>
+            <p>The buttons below let you view T-rex's saved lyrics, and edit them. No messing with my baby, now. The internet police are watching you.</p>
+            <div id="trexAdminPanel" class="trexAdminPanel">
+                <input type="button" runat="server" id="trexButton" class="trexButton" text="Click For Lyrics"/>
+                <input type="button" runat="server" id="trexAdminButton" class="trexAdminButton" text="Click For Admin"/>
+                <input type="button" runat="server" id="lyricsSave" class="lyricsSave" text="Save"/>
+                <div id="trexLyricsPanel" class="trexLyricsPanel" />
+            <div>
+            
+            <script type="text/javascript">
+                $('.trexButton').click(function() {
+                    $('.lyricsSave').hide();
+                    $.post("/scripts/trlWeb.py", {'role':'getLyrics'}, 
+                        function(data) {
+                            $('.trexLyricsPanel').html(data);
+                            $('.trexLyricsPanel').addClass('full');
+                        }
+                    );
+                    return false;
+                });
+                
+                $('.trexAdminButton').click(function() {
+                    $.post("/scripts/trlWeb.py", {'role':'getJSON'}, 
+                        function(data) {
+                            var JSONLyrics = data;
+                            var len = JSONLyrics.length;
+                            var theOutput = '<table class="lyricsAdminList"><tr><th>Used</th><th>Lyric</th><th>Artist</th></tr>';
+                            for (var i = 0; i<len; i++) {
+                                theOutput += '<tr><td class="usedCell">';
+                                
+                                if (JSONLyrics[i]['used'] == 'true') {
+                                    theOutput += '<input type="checkbox" checked="true" />';
+                                } else {
+                                    theOutput += '<input type="checkbox" />';
+                                }
+                                
+                                theOutput += '</td><td class="lyricCell"><textarea cols="50" rows="3" class="lyric">'+JSONLyrics[i]['text']+'</textarea></td>';
+                                
+                                theOutput += '<td class="artistCell"><input type="text" class="artist" value="';
+                                if (JSONLyrics[i].hasOwnProperty('artist')) {
+                                    theOutput += JSONLyrics[i]['artist'];
+                                }
+                                theOutput += '" /></td>'
+                                
+                                theOutput += '</tr>'
+                                
+                            }
+                            theOutput += '</table>';
+                            $('.trexLyricsPanel').html(theOutput);
+                            $('.trexAdminPanel .lyricsSave').show();
+                        }
+                    ); 
+                    return false; 
+                });
+                
+                $('.lyricsSave').click(function() {
+                    var toSend = [];
+                    var illegalLyric = '';
+                    $('table.lyricsAdminList tbody tr').each(function() {
+                        var theRow = $(this);
+                        if ($(theRow).children('td').length > 0) {
+                            var thisArr = {};
+                            if ($(theRow).find('.usedCell input').prop('checked')) {
+                                thisArr['used'] = 'true';
+                            } else {
+                                thisArr['used'] = 'false';
+                            }
+                            if ($(theRow).find('.lyricCell textarea').val() != '') {
+                                if ($(theRow).find('.lyricCell textarea').val().length < 141) {
+                                    thisArr['text'] = $.trim($(theRow).find('.lyricCell textarea').val());
+                                } else {
+                                    illegalLyric += $(theRow).find('.lyricCell textarea').val() + '<<break>>';
+                                }
+                            }
+                            if ($(theRow).find('.artistCell input').val() != '') {
+                                thisArr['artist'] = $.trim($(theRow).find('.artistCell input').val());
+                            }
+                            toSend.push(thisArr);
+                        }
+                    });
+                    if (illegalLyric == '') {
+                        var finalToSend = JSON.stringify(toSend);
+                        $.post("/scripts/trlWeb.py", {role:"setJSON", theJSON:finalToSend},
+                            function(data) {
+                                $('.trexLyricsPanel').html('Lyrics saved');
+                                $('.lyricsSave').hide();
+                            }
+                        );
+                    } else {
+                        alert('Sorry, the lyric "' + illegalLyric.split('<<break>>')[0] + '" is too long');
+                    }
+                    return false;
+                });
+            </script>
+            
+        <div>
+        
+        <div id="tweetStreamPanel" class="coolThing tweetStreamPanel">
+            <p>This is the current state of my new-and-improved standalone tweetStream widget (old version showcased on the front page). Bit of styling needed!</p>
+            <input type="button" runat="server" id="theTweetButton" class="theTweetButton" />
+            <div id="tweetStreamContainer" class="tweetStreamContainer" />
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.theTweetButton').click(function() {
+                        $('.tweetStreamContainer').tweetStream();
+                        return false;
+                    });
+                });
+            </script>
+        <div>
+    <div>
+<div>
+  
+  
+	<script type="text/javascript">
+		$(document).ready(function() {
+            var theSlider = $('.coolThingsSlider').flexslider({
+				animation:"slide",
+				slideshowSpeed: 3500,
+				start: function(slider) {
+				    $('.slides li').click(function() {
+        				var theRel = $(this).attr('rel');
+        				if ($('.coolThing.'+theRel).is(':visible')) {
+        				    $('.coolThing.'+theRel).slideUp();
+        				    slider.resume();
+        				} else {
+        				    slider.pause();
+            				$('.coolThing').each(function () {
+            					if (!$(this).hasClass(theRel)) {
+            						$(this).slideUp(function() {
+            							$('.'+theRel).delay(2).slideDown();					
+            						});
+            					}
+            				});
+            			}
+        			});
+				}
+			});
+		
+			$('.coolThing').hide();
+			
+            $('.flex-direction-nav li').click(function() {
+                $('.coolThing').slideUp(); 
+			});
+		});
+		
+    </script>
+
+</body>
+</html>

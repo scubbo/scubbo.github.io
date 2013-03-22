@@ -1,0 +1,461 @@
+Help on User in module twitter object:
+
+class User(__builtin__.object)
+ |  A class representing the User structure used by the twitter API.
+ |  
+ |  The User structure exposes the following properties:
+ |  
+ |    user.id
+ |    user.name
+ |    user.screen_name
+ |    user.location
+ |    user.description
+ |    user.profile_image_url
+ |    user.profile_background_tile
+ |    user.profile_background_image_url
+ |    user.profile_sidebar_fill_color
+ |    user.profile_background_color
+ |    user.profile_link_color
+ |    user.profile_text_color
+ |    user.protected
+ |    user.utc_offset
+ |    user.time_zone
+ |    user.url
+ |    user.status
+ |    user.statuses_count
+ |    user.followers_count
+ |    user.friends_count
+ |    user.favourites_count
+ |    user.geo_enabled
+ |    user.verified
+ |    user.lang
+ |    user.notifications
+ |    user.contributors_enabled
+ |    user.created_at
+ |    user.listed_count
+ |  
+ |  Methods defined here:
+ |  
+ |  AsDict(self)
+ |      A dict representation of this twitter.User instance.
+ |      
+ |      The return value uses the same key names as the JSON representation.
+ |      
+ |      Return:
+ |        A dict representing this twitter.User instance
+ |  
+ |  AsJsonString(self)
+ |      A JSON string representation of this twitter.User instance.
+ |      
+ |      Returns:
+ |        A JSON string representation of this twitter.User instance
+ |  
+ |  GetContributorsEnabled(self)
+ |      Get the setting of contributors_enabled for this user.
+ |      
+ |      Returns:
+ |        True/False contributors_enabled of the user
+ |  
+ |  GetCreatedAt(self)
+ |      Get the setting of created_at for this user.
+ |      
+ |      Returns:
+ |        created_at value of the user
+ |  
+ |  GetDescription(self)
+ |      Get the short text description of this user.
+ |      
+ |      Returns:
+ |        The short text description of this user
+ |  
+ |  GetFavouritesCount(self)
+ |      Get the number of favourites for this user.
+ |      
+ |      Returns:
+ |        The number of favourites for this user.
+ |  
+ |  GetFollowersCount(self)
+ |      Get the follower count for this user.
+ |      
+ |      Returns:
+ |        The number of users following this user.
+ |  
+ |  GetFriendsCount(self)
+ |      Get the friend count for this user.
+ |      
+ |      Returns:
+ |        The number of users this user has befriended.
+ |  
+ |  GetGeoEnabled(self)
+ |      Get the setting of geo_enabled for this user.
+ |      
+ |      Returns:
+ |        True/False if Geo tagging is enabled
+ |  
+ |  GetId(self)
+ |      Get the unique id of this user.
+ |      
+ |      Returns:
+ |        The unique id of this user
+ |  
+ |  GetLang(self)
+ |      Get the setting of lang for this user.
+ |      
+ |      Returns:
+ |        language code of the user
+ |  
+ |  GetListedCount(self)
+ |      Get the listed count for this user.
+ |      
+ |      Returns:
+ |        The number of lists this user belongs to.
+ |  
+ |  GetLocation(self)
+ |      Get the geographic location of this user.
+ |      
+ |      Returns:
+ |        The geographic location of this user
+ |  
+ |  GetName(self)
+ |      Get the real name of this user.
+ |      
+ |      Returns:
+ |        The real name of this user
+ |  
+ |  GetNotifications(self)
+ |      Get the setting of notifications for this user.
+ |      
+ |      Returns:
+ |        True/False for the notifications setting of the user
+ |  
+ |  GetProfileBackgroundColor(self)
+ |  
+ |  GetProfileBackgroundImageUrl(self)
+ |  
+ |  GetProfileBackgroundTile(self)
+ |      Boolean for whether to tile the profile background image.
+ |      
+ |      Returns:
+ |        True if the background is to be tiled, False if not, None if unset.
+ |  
+ |  GetProfileImageUrl(self)
+ |      Get the url of the thumbnail of this user.
+ |      
+ |      Returns:
+ |        The url of the thumbnail of this user
+ |  
+ |  GetProfileLinkColor(self)
+ |  
+ |  GetProfileSidebarFillColor(self)
+ |  
+ |  GetProfileTextColor(self)
+ |  
+ |  GetProtected(self)
+ |  
+ |  GetScreenName(self)
+ |      Get the short twitter name of this user.
+ |      
+ |      Returns:
+ |        The short twitter name of this user
+ |  
+ |  GetStatus(self)
+ |      Get the latest twitter.Status of this user.
+ |      
+ |      Returns:
+ |        The latest twitter.Status of this user
+ |  
+ |  GetStatusesCount(self)
+ |      Get the number of status updates for this user.
+ |      
+ |      Returns:
+ |        The number of status updates for this user.
+ |  
+ |  GetTimeZone(self)
+ |      Returns the current time zone string for the user.
+ |      
+ |      Returns:
+ |        The descriptive time zone string for the user.
+ |  
+ |  GetUrl(self)
+ |      Get the homepage url of this user.
+ |      
+ |      Returns:
+ |        The homepage url of this user
+ |  
+ |  GetUtcOffset(self)
+ |  
+ |  GetVerified(self)
+ |      Get the setting of verified for this user.
+ |      
+ |      Returns:
+ |        True/False if user is a verified account
+ |  
+ |  SetContributorsEnabled(self, contributors_enabled)
+ |      Set twitter.contributors_enabled for this user.
+ |      
+ |      Args:
+ |        contributors_enabled:
+ |          True/False contributors_enabled setting for the user
+ |  
+ |  SetCreatedAt(self, created_at)
+ |      Set twitter.created_at for this user.
+ |      
+ |      Args:
+ |        created_at:
+ |          created_at value for the user
+ |  
+ |  SetDescription(self, description)
+ |      Set the short text description of this user.
+ |      
+ |      Args:
+ |        description: The short text description of this user
+ |  
+ |  SetFavouritesCount(self, count)
+ |      Set the favourite count for this user.
+ |      
+ |      Args:
+ |        count:
+ |          The number of favourites for this user.
+ |  
+ |  SetFollowersCount(self, count)
+ |      Set the follower count for this user.
+ |      
+ |      Args:
+ |        count:
+ |          The number of users following this user.
+ |  
+ |  SetFriendsCount(self, count)
+ |      Set the friend count for this user.
+ |      
+ |      Args:
+ |        count:
+ |          The number of users this user has befriended.
+ |  
+ |  SetGeoEnabled(self, geo_enabled)
+ |      Set the latest twitter.geo_enabled of this user.
+ |      
+ |      Args:
+ |        geo_enabled:
+ |          True/False if Geo tagging is to be enabled
+ |  
+ |  SetId(self, id)
+ |      Set the unique id of this user.
+ |      
+ |      Args:
+ |        id: The unique id of this user.
+ |  
+ |  SetLang(self, lang)
+ |      Set twitter.lang for this user.
+ |      
+ |      Args:
+ |        lang:
+ |          language code for the user
+ |  
+ |  SetListedCount(self, count)
+ |      Set the listed count for this user.
+ |      
+ |      Args:
+ |        count:
+ |          The number of lists this user belongs to.
+ |  
+ |  SetLocation(self, location)
+ |      Set the geographic location of this user.
+ |      
+ |      Args:
+ |        location: The geographic location of this user
+ |  
+ |  SetName(self, name)
+ |      Set the real name of this user.
+ |      
+ |      Args:
+ |        name: The real name of this user
+ |  
+ |  SetNotifications(self, notifications)
+ |      Set twitter.notifications for this user.
+ |      
+ |      Args:
+ |        notifications:
+ |          True/False notifications setting for the user
+ |  
+ |  SetProfileBackgroundColor(self, profile_background_color)
+ |  
+ |  SetProfileBackgroundImageUrl(self, profile_background_image_url)
+ |  
+ |  SetProfileBackgroundTile(self, profile_background_tile)
+ |      Set the boolean flag for whether to tile the profile background image.
+ |      
+ |      Args:
+ |        profile_background_tile: Boolean flag for whether to tile or not.
+ |  
+ |  SetProfileImageUrl(self, profile_image_url)
+ |      Set the url of the thumbnail of this user.
+ |      
+ |      Args:
+ |        profile_image_url: The url of the thumbnail of this user
+ |  
+ |  SetProfileLinkColor(self, profile_link_color)
+ |  
+ |  SetProfileSidebarFillColor(self, profile_sidebar_fill_color)
+ |  
+ |  SetProfileTextColor(self, profile_text_color)
+ |  
+ |  SetProtected(self, protected)
+ |  
+ |  SetScreenName(self, screen_name)
+ |      Set the short twitter name of this user.
+ |      
+ |      Args:
+ |        screen_name: the short twitter name of this user
+ |  
+ |  SetStatus(self, status)
+ |      Set the latest twitter.Status of this user.
+ |      
+ |      Args:
+ |        status:
+ |          The latest twitter.Status of this user
+ |  
+ |  SetStatusesCount(self, count)
+ |      Set the status update count for this user.
+ |      
+ |      Args:
+ |        count:
+ |          The number of updates for this user.
+ |  
+ |  SetTimeZone(self, time_zone)
+ |      Sets the user's time zone string.
+ |      
+ |      Args:
+ |        time_zone:
+ |          The descriptive time zone to assign for the user.
+ |  
+ |  SetUrl(self, url)
+ |      Set the homepage url of this user.
+ |      
+ |      Args:
+ |        url: The homepage url of this user
+ |  
+ |  SetUtcOffset(self, utc_offset)
+ |  
+ |  SetVerified(self, verified)
+ |      Set twitter.verified for this user.
+ |      
+ |      Args:
+ |        verified:
+ |          True/False if user is a verified account
+ |  
+ |  __eq__(self, other)
+ |  
+ |  __init__(self, id=None, name=None, screen_name=None, location=None, description=None, profile_image_url=None, profile_background_tile=None, profile_background_image_url=None, profile_sidebar_fill_color=None, profile_background_color=None, profile_link_color=None, profile_text_color=None, protected=None, utc_offset=None, time_zone=None, followers_count=None, friends_count=None, statuses_count=None, favourites_count=None, url=None, status=None, geo_enabled=None, verified=None, lang=None, notifications=None, contributors_enabled=None, created_at=None, listed_count=None)
+ |  
+ |  __ne__(self, other)
+ |  
+ |  __str__(self)
+ |      A string representation of this twitter.User instance.
+ |      
+ |      The return value is the same as the JSON string representation.
+ |      
+ |      Returns:
+ |        A string representation of this twitter.User instance.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  NewFromJsonDict(data)
+ |      Create a new instance based on a JSON dict.
+ |      
+ |      Args:
+ |        data:
+ |          A JSON dict, as converted from the JSON in the twitter API
+ |      
+ |      Returns:
+ |        A twitter.User instance
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  contributors_enabled
+ |      The value of twitter.contributors_enabled for this user.
+ |  
+ |  created_at
+ |      The value of twitter.created_at for this user.
+ |  
+ |  description
+ |      The short text description of this user.
+ |  
+ |  favourites_count
+ |      The number of favourites for this user.
+ |  
+ |  followers_count
+ |      The number of users following this user.
+ |  
+ |  friends_count
+ |      The number of friends for this user.
+ |  
+ |  geo_enabled
+ |      The value of twitter.geo_enabled for this user.
+ |  
+ |  id
+ |      The unique id of this user.
+ |  
+ |  lang
+ |      The value of twitter.lang for this user.
+ |  
+ |  listed_count
+ |      The number of lists this user belongs to.
+ |  
+ |  location
+ |      The geographic location of this user.
+ |  
+ |  name
+ |      The real name of this user.
+ |  
+ |  notifications
+ |      The value of twitter.notifications for this user.
+ |  
+ |  profile_background_color
+ |  
+ |  profile_background_image_url
+ |      The url of the profile background of this user.
+ |  
+ |  profile_background_tile
+ |      Boolean for whether to tile the background image.
+ |  
+ |  profile_image_url
+ |      The url of the thumbnail of this user.
+ |  
+ |  profile_link_color
+ |  
+ |  profile_sidebar_fill_color
+ |  
+ |  profile_text_color
+ |  
+ |  protected
+ |  
+ |  screen_name
+ |      The short twitter name of this user.
+ |  
+ |  status
+ |      The latest twitter.Status of this user.
+ |  
+ |  statuses_count
+ |      The number of updates for this user.
+ |  
+ |  time_zone
+ |      Returns the current time zone string for the user.
+ |      
+ |      Returns:
+ |        The descriptive time zone string for the user.
+ |  
+ |  url
+ |      The homepage url of this user.
+ |  
+ |  utc_offset
+ |  
+ |  verified
+ |      The value of twitter.verified for this user.
