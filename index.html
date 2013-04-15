@@ -57,7 +57,8 @@
       feed.load(function(result) {
         if (!result.error) {
 //          var container = document.getElementById("feed");
-          var items = result.feed.entries
+          var items = result.feed.entries;
+          console.log(items);
           
           for (var i=0;i<3;i++) {
            var newDiv = document.createElement('div');
