@@ -63,9 +63,11 @@
     return xhttp.responseXML;
     }
     
-    xmlDoc=loadXMLDoc("/nftnfrss.xml");
+    console.log('working');
+    xmlDoc=loadXMLDoc("http://nftnf.blogspot.com/feeds/posts/default?alt=rss");
     
     items = xmlDoc.getElementsByTagName("item");
+    console.log(items);
     
     for (var i=0;i<3;i++) {
       var newDiv = document.createElement('div');
