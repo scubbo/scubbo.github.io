@@ -68,9 +68,7 @@
            var postTitleContents = document.createTextNode(items[i]["title"]);
            postTitle.appendChild(postTitleContents);
            var postBody = document.createElement('p');
-           var postBodyContents = items[i]["description"];
-           var theIndex = postBodyContents.indexOf('<br');
-           postBodyContents = postBodyContents.substring(0, theIndex);
+           var postBodyContents = items[i]["contentSnippet"];
            $(postBody).html(postBodyContents);
    
            newDiv.appendChild(postTitle);
