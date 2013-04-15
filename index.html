@@ -7,6 +7,10 @@
 	<script type="text/javascript" src="/js/json2.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/flexslider.css" />
 	<script src="/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	    google.load('feeds', '1');
+	</script>
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 
@@ -48,44 +52,37 @@
   </div>
   
   <script type="text/javascript">
-    function loadXMLDoc(dname)
-    {
-    if (window.XMLHttpRequest)
-      {
-      xhttp=new XMLHttpRequest();
-      }
-    else
-      {
-      xhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-    xhttp.open("GET",dname,false);
-    xhttp.send("");
-    return xhttp.responseXML;
+    function initialize() {
+      var feed = new google.feeds.Feed("http://nftnf.blogspot.com/feeds/posts/default?alt=rss");
+      feed.load(function(result) {
+        if (!result.error) {
+//          var container = document.getElementById("feed");
+          var items = result.feed.entries
+          
+          for (var i=0;i<3;i++) {
+           var newDiv = document.createElement('div');
+           newDiv.setAttribute('id', 'blogEntryWrapper'+i.toString());
+           newDiv.setAttribute('class', 'blogEntryWrapper blogEntryWrapper'+i.toString());
+           var postTitle = document.createElement('h3');
+           var postTitleContents = document.createTextNode(items[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+           postTitle.appendChild(postTitleContents);
+           var postBody = document.createElement('p');
+           var postBodyContents = items[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+           var theIndex = postBodyContents.indexOf('<br');
+           postBodyContents = postBodyContents.substring(0, theIndex);
+           $(postBody).html(postBodyContents);
+   
+           newDiv.appendChild(postTitle);
+           newDiv.appendChild(postBody);
+           $('.blogContainer').append(newDiv);
+         }
+          
+        }
+      });
     }
+    google.setOnLoadCallback(initialize);
     
-    console.log('working');
-    xmlDoc=loadXMLDoc("http://nftnf.blogspot.com/feeds/posts/default?alt=rss");
     
-    items = xmlDoc.getElementsByTagName("item");
-    console.log(items);
-    
-    for (var i=0;i<3;i++) {
-      var newDiv = document.createElement('div');
-      newDiv.setAttribute('id', 'blogEntryWrapper'+i.toString());
-      newDiv.setAttribute('class', 'blogEntryWrapper blogEntryWrapper'+i.toString());
-      var postTitle = document.createElement('h3');
-      var postTitleContents = document.createTextNode(items[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
-      postTitle.appendChild(postTitleContents);
-      var postBody = document.createElement('p');
-      var postBodyContents = items[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
-      var theIndex = postBodyContents.indexOf('<br');
-      postBodyContents = postBodyContents.substring(0, theIndex);
-      $(postBody).html(postBodyContents);
-  
-      newDiv.appendChild(postTitle);
-      newDiv.appendChild(postBody);
-      $('.blogContainer').append(newDiv);
-    }
     
     $(document).ready(function() {
         $.post("/scripts/tweets.py", {limit:'5'}, 
