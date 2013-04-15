@@ -65,10 +65,10 @@
            newDiv.setAttribute('id', 'blogEntryWrapper'+i.toString());
            newDiv.setAttribute('class', 'blogEntryWrapper blogEntryWrapper'+i.toString());
            var postTitle = document.createElement('h3');
-           var postTitleContents = document.createTextNode(items[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+           var postTitleContents = document.createTextNode(items[i]["title"]);
            postTitle.appendChild(postTitleContents);
            var postBody = document.createElement('p');
-           var postBodyContents = items[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+           var postBodyContents = items[i]["description"];
            var theIndex = postBodyContents.indexOf('<br');
            postBodyContents = postBodyContents.substring(0, theIndex);
            $(postBody).html(postBodyContents);
