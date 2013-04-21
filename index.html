@@ -1,11 +1,11 @@
 <html>
 <head>
 	<title>Jack's webpage</title>
-	<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="/js/main.js"></script>
-	<script type="text/javascript" src="/js/json2.js"></script>
-	<link rel="stylesheet" type="text/css" href="/css/flexslider.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/json2.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/flexslider.css" />
 	<script src="/js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script type="text/javascript">
@@ -56,35 +56,60 @@
       var feed = new google.feeds.Feed("http://nftnf.blogspot.com/feeds/posts/default?alt=rss");
       feed.load(function(result) {
         if (!result.error) {
-//          var container = document.getElementById("feed");
           var items = result.feed.entries;
-          console.log(items);
           
           for (var i=0;i<3;i++) {
            var newDiv = document.createElement('div');
            newDiv.setAttribute('id', 'blogEntryWrapper'+i.toString());
            newDiv.setAttribute('class', 'blogEntryWrapper blogEntryWrapper'+i.toString());
+           var postTitleLink = document.createElement('a');
+           postTitleLink.href = items[i]['link'];
            var postTitle = document.createElement('h3');
            var postTitleContents = document.createTextNode(items[i]["title"]);
            postTitle.appendChild(postTitleContents);
+           postTitleLink.appendChild(postTitle);
+           
            var postBody = document.createElement('p');
            var postBodyContents = items[i]["contentSnippet"];
            $(postBody).html(postBodyContents);
    
-           newDiv.appendChild(postTitle);
+           newDiv.appendChild(postTitleLink);
            newDiv.appendChild(postBody);
            $('.blogContainer').append(newDiv);
          }
           
         }
-      });
+        });
+        
+        var feed = new google.feeds.Feed("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=scubbo");
+        feed.setNumEntries(5);
+        feed.load(function(result) {
+            if (!result.error) {
+                var handle = result.feed.link.replace('http://twitter.com/', '');
+                var items = result.feed.entries;
+
+                for (var i=0;i<items.length;i++) {
+                    var newDiv = document.createElement('div');
+                    newDiv.setAttribute('id', 'tweetEntryWrapper'+i.toString());
+                    newDiv.setAttribute('class', 'tweetEntryWrapper tweetEntryWrapper'+i.toString());
+                    var postBody = document.createElement('p');
+                    var regex = new RegExp('^' + handle + ': ');
+                    var postBodyContents = items[i]["content"].replace(regex, '');
+                    $(postBody).html(postBodyContents);
+
+                    newDiv.appendChild(postBody);
+                $('.tweetContainer').append(newDiv);
+                }
+            }  
+        });
     }
     google.setOnLoadCallback(initialize);
     
     
     
     $(document).ready(function() {
-        $.post("/scripts/tweets.py", {limit:'5'}, 
+    
+    /*    $.post("/scripts/tweets.py", {limit:'5'}, 
             function(data) {
                 var theTweets = data;
                 for (var i=0;i<theTweets.length;i++) {
@@ -99,7 +124,7 @@
                     $('.tweetContainer').append(newDiv);
                 }
             }
-        );
+        );*/
     });
     
   </script>
